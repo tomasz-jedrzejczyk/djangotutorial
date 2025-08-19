@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from main.views import home  # Import the view you just created
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  # Default admin page
+    path('', home, name='home'),  # Map the root URL to your custom view
 ]
