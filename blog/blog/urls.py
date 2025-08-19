@@ -1,5 +1,5 @@
 """
-URL configuration for my_blog project.
+URL configuration for blog project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import home  # Import the view you just created
+from blog.views import custom_home  # Import your custom view
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Default admin page
-    path('', home, name='home'),  # Map the root URL to your custom view
+    path('', custom_home, name='home'),  # Set your custom page as the root URL
 ]
