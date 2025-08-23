@@ -16,9 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.auth.views import LoginView
 from blog.views import custom_home  # Import your custom view
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # Default admin page
-    path('', custom_home, name='home'),  # Set your custom page as the root URL
+    path('', custom_home, name='home'),  # Custom home page
+    path('login/', LoginView.as_view(template_name='login.html'), name='login'),  # Login page
 ]
